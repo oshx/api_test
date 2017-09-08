@@ -1,0 +1,141 @@
+html,body {
+    margin:0;
+    padding:0;
+    font-size:14px;
+    font-family:'Malgun Gothic','맑은 고딕','Apple SD Gothic Neo',sans-serif;
+}
+
+h1,h2,h3,h4,h5,h6 {
+    margin:0;
+    padding:0;
+    font-size:18px;
+}
+
+div {
+    margin:0;
+    padding:0;
+}
+
+ul,ol,dl {
+    margin:0;
+    padding:0;
+    list-style:none;
+}
+
+li,dt,dd {
+    margin:0;
+    padding:0;
+}
+
+table {
+    margin:0;
+    padding:0;
+    table-layout:fixed;
+    width:100%;
+    border-collapse:collapse;
+}
+th {
+    padding:12px 0;
+    font-size:16px;
+    border:1px solid #666;
+    background:#666;
+    color:#fff;
+}
+td{
+    padding:8px 0;
+    border:1px solid #666;
+    font-size:13px;
+    text-align:center;
+}
+input,button {
+    box-sizing:border-box;
+    margin:0;
+    padding:0 15px;
+    height:32px;
+    font-size:15px;
+    line-height:32px;
+    border:1px solid #888;
+    color:#000;
+    vertical-align:middle;
+}
+input[type="number"]{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin:0;
+}
+
+.header-wrapper {
+    padding:20px 0;
+}
+
+.header-wrapper h1 {
+    font-size:60px;
+    text-align:center;
+}
+
+.write-wrapper {
+    position:relative;
+    text-align:center;
+}
+
+.write-wrapper h2 {
+    margin-bottom:20px;
+}
+
+.write-wrapper .btn {
+    display:inline-block;
+    box-sizing:border-box;
+    height:32px;
+    line-height:32px;
+    padding:0 20px;
+    vertical-align:middle;
+    text-align:center;
+    text-decoration:none;
+    color:#666;
+    border:1px solid #888;
+}
+
+.nation-select{
+    position:absolute;
+    right:60px;
+    bottom:5px;
+}
+
+.movie-chart {
+    position:relative;
+    padding:60px;
+}
+
+.movie-list {
+    overflow:hidden
+}
+
+.movie-item {
+    float:left;
+    box-sizing:border-box;
+    width:32%;
+    padding:10px;
+    margin:0 0 2% 2%;
+    border:1px solid #369;
+}
+.movie-item:nth-child(3n+1){
+    margin-left:0
+}
+
+.data-text {
+    display:block;
+    line-height:1.8;
+    font-size:13px;
+    letter-spacing:-1px;
+}
+
+.movie-table-wrapper {
+    padding:50px;
+}
+
+.movie-table-wrapper .name {
+    padding-left:30px;
+    text-align:left;
+    font-weight:bold;
+}
