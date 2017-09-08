@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>영화보기</title>
+    <script src="./rsc/js/jquery.js"></script>
+    <script src="./rsc/js/handlebars.js"></script>
+    <script src="./rsc/js/api_test2.js" defer></script>
+    <link rel="stylesheet" href="./rsc/css/style.css" />
+</head>
+
+<body>
+<div class="header-wrapper">
+    <h1>영화진흥위원회 (handlebars)</h1>
+</div>
+
+<div class="write-wrapper">
+        <h2>일일 박스오피스</h2>
+        <span>조회 하실 날짜를 입력하세요.</span>
+        <input type="date" id="SelectDate" />
+        <a href="#" class="btn" onclick="movieInfo();">확인</a>
+        <div class="nation-select">
+            <span>국가선택 : </span>
+            <select id="Nation" onchange="movieInfo();">
+                <option value="">전체</option>
+                <option value="K">한국영화</option>
+                <option value="F">외국영화</option>
+            </select>
+        </div>
+</div>
+
+<div class="movie-table-wrapper">
+    <table class="movie-table">
+        <colgroup>
+            <col width="11.66%" />
+            <col width="30%" />
+            <col width="11.66%" />
+            <col width="11.66%" />
+            <col width="11.66%" />
+            <col width="11.66%" />
+        </colgroup>
+        <thead>
+            <tr>
+                <th scope="col">대표코드</th>
+                <th scope="col">영화제목</th>
+                <th scope="col">개봉날짜</th>
+                <th scope="col">관객수</th>
+                <th scope="col">누적관객</th>
+                <th scope="col">스크린수</th>
+                <th scope="col">상영횟수</th>
+            </tr>
+        </thead>
+        <tbody class="movie-content">
+            <script id="movie-template" type="javascript/x-handlebars-template">
+            {{#each dailyBoxOfficeList}}
+            <tr>
+                <td>{{movieCd}}</td>
+                <td>{{movieNm}}</td>
+                <td>{{openDt}}</td>
+                <td>{{audiCnt}}</td>
+                <td>{{audiAcc}}</td>
+                <td>{{scrnCnt}}</td>
+                <td>{{showCnt}}</td>
+            </tr>
+            {{/each}}
+            </script>
+        </tbody>
+    </table>
+</div>
+
+</body>
+</html>
