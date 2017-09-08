@@ -50,7 +50,7 @@ function movieInfo(){
                 }
             }else{
                 printHTML += "<tr>";
-                printHTML += "  <td class='no-value' colspan='7'>값이 없습니다.</td>";
+                printHTML += "  <td class='no-value' colspan='7'>정보가 없습니다.</td>";
                 printHTML += "</tr>";
             }
             $(".movie-content").empty().append(printHTML)
