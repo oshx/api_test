@@ -6,31 +6,28 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>영화보기</title>
     <script src="./rsc/js/jquery.js"></script>
-    <!--script src="./rsc/js/handlebars.js"></script-->
-    <script src="./rsc/js/api_test.js" defer></script>
-    <link rel="stylesheet" href="./rsc/css/style.css" />
+    <script src="./rsc/js/handlebars.js"></script>
+    <script src="./rsc/js/movie.js" defer></script>
+    <link rel="stylesheet" href="./rsc/css/style.css">
 </head>
-
 <body>
 <div class="header-wrapper">
     <h1>영화진흥위원회</h1>
 </div>
-
 <div class="write-wrapper">
         <h2>일일 박스오피스</h2>
         <span>조회 하실 날짜를 입력하세요.</span>
-        <input type="date" id="SelectDate" />
-        <a href="#" class="btn" onclick="movieInfo();">확인</a>
+        <input type="date" id="SelectDate" class="_searchDateInput" />
+        <a href="#" class="btn _searchTrigger">확인</a>
         <div class="nation-select">
             <span>국가선택 : </span>
-            <select id="Nation" onchange="movieInfo();">
+            <select id="Nation" class="_searchByNationTrigger">
                 <option value="">전체</option>
                 <option value="K">한국영화</option>
                 <option value="F">외국영화</option>
             </select>
         </div>
 </div>
-
 <div class="movie-table-wrapper">
     <table class="movie-table">
         <colgroup>
@@ -52,9 +49,27 @@
                 <th scope="col">상영횟수</th>
             </tr>
         </thead>
-        <tbody class="movie-content"></tbody>
+        <tbody class="movie-content _movieResult">
+            <script class="_movieSuccessResultTemplate" type="javascript/x-handlebars-template">
+                {{#each dailyBoxOfficeList}}
+                <tr>
+                    <td>{{movieCd}}</td>
+                    <td>{{movieNm}}</td>
+                    <td>{{openDt}}</td>
+                    <td>{{audiCnt}}</td>
+                    <td>{{audiAcc}}</td>
+                    <td>{{scrnCnt}}</td>
+                    <td>{{showCnt}}</td>
+                </tr>
+                {{/each}}
+            </script>
+            <script class="_movieExceptionResultTemplate" type="javascript/x-handlebars-template">
+                <tr>
+                    <td class='no-value' colspan='7'>{{message}}</td>
+                </tr>
+            </script>
+        </tbody>
     </table>
 </div>
-
 </body>
 </html>
